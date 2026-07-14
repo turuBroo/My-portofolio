@@ -4,361 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cyber Security Portfolio</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: black;
-      color: #00ff88;
-      overflow-x: hidden;
-    }
-    /*////////////////// SELECTION TEXT STYLE //////////////*/
-    p::selection {
-      background-color: #00ff8820;
-      color: #e5ff00; /* Warna teks saat diseleksi */
-    } 
-    h1::selection {
-      background-color: #00ff8820;
-      color: #e5ff00; /* Warna teks saat diseleksi */
-    }
-    h2::selection {
-      background-color: #00ff8820;
-      color: #e5ff00; /* Warna teks saat diseleksi */
-    }
-    h3::selection {
-      background-color: #00ff8820;
-      color: #e5ff00; /* Warna teks saat diseleksi */
-    }
-    a::selection {
-      background-color: #00ff8820;
-      color: #e5ff00; /* Warna teks saat diseleksi */
-    }
-    footer::selection {
-      background-color: #00ff8820;
-      color: #e5ff00; /* Warna teks saat diseleksi */
-    }
-    img::selection {
-      background-color: #00ff8820;
-      color: #e5ff00; /* Warna teks saat diseleksi */
-    }
-    /*////////////////// SELECTION TEXT STYLE //////////////*/
-
-    .navbar {
-      z-index: 9999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #00603343;
-      position: sticky;
-      backdrop-filter: blur(3px);          /* Blur latar belakang */
-      -webkit-backdrop-filter: blur(3px);
-    }
-    .navbar-container {
-      display: flex;
-      align-items: center;
-      padding: 0;  
-    }
-    .navbar-links {
-      justify-content: space-between;
-      margin-left: auto;
-    }
-    .navbar-links a {
-      color: #00ff88;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: color 0.3s ease;
-      padding-left: 10px; 
-      padding-right: 10px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding: 10px 20px;
-    }
-
-    /*////////// INI STYLE WARNA UNTUK WINDOWS ///////////*/
-    .navbar-links a:hover {
-      color: rgb(0, 238, 255);
-      background: rgba(0, 255, 231, 0.05);
-      border-radius: 10px;
-      text-shadow: 0 8px 24px rgba(0, 128, 255, 0.8), 0 0 10px rgba(0, 128, 255, 0.5);
-      transition: color 100ms ease, background-color .3s ease;
-    }
-    /*////////// INI STYLE WARNA UNTUK WINDOWS ///////////*/
-    /*///////// Android Glow /////////////////////////////*/
-    body.android .navbar-links a:hover {
-      color: #e5ff00;
-      text-shadow: 1px 1px 10px rgba(0, 255, 98, 0.8), 0 0 10px rgba(0, 255, 98, 0.5);
-    }
-    body.android .H3::after {
-      color: #e5ff00;
-      text-shadow: 1px 1px 10px rgba(0, 255, 98, 0.8), 0 0 10px rgba(0, 255, 98, 0.5);
-    }
-    body.android .H3:hover {
-      background: transparent;
-    }
-    body.android .H3:hover::after {
-      opacity: 1;
-    }
-    /*///////// Android Glow /////////////////////////////*/
-    /*///////// iOS → abu-abu ////////////////////////////*/
-    body.ios .navbar-links a:hover {
-      color: #ffffff;
-      text-shadow: 1px 1px 7px rgb(165, 165, 165);
-    }
-    body.ios .H3::after {
-      color: #ffffff;
-      text-shadow: 1px 1px 7px rgb(165, 165, 165);
-    }
-    body.ios .H3:hover {
-      background: transparent;
-    }
-    body.ios .H3:hover::after {
-      opacity: 1;
-    }
-    /*///////// iOS → abu-abu ////////////////////////////*/
-
-    canvas#network-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: black;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 0rem 0rem;
-      margin: 10px;
-      z-index: 1;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: #00ff88;
-      text-shadow: 2px 2px 10px #00ff88;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-    }
-
-    .about {
-      justify-content: center;
-      align-items: center;
-      margin-left: 150px;
-      margin-right: 150px;
-      background-color: #00783c44;
-      padding-bottom: 1px;
-      padding-top: 1px;
-      border-radius: 10px;
-      backdrop-filter: blur(2px);          /* Blur latar belakang */
-      -webkit-backdrop-filter: blur(2px);
-    }
-    .about h2 {
-      text-align: center;
-      color: #00ff88;
-    }
-    .about img {
-      display: block;
-      margin: auto;
-      height: 350px; width: auto;
-    }
-    .about p {
-      padding-left: 10px;
-      padding-right: 40px;
-    }
-
-    .H3 {
-      position: relative;
-      display: inline-block;
-      color: #00ff88;
-      transition: color 0.5s ease;
-    }
-    .H3:hover {
-      color: transparent;
-    }
-    /*////////// INI STYLE WARNA UNTUK WINDOWS ///////////*/
-    .H3::after {
-      content: "P.R.Samloy";
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: rgb(0, 238, 255);
-      opacity: 0;
-      transition: opacity 0.1s ease;
-      border-radius: 10px;
-      text-shadow: 0 8px 24px rgba(0, 128, 255, 0.8), 0 0 10px rgba(0, 128, 255, 0.5);
-      transition: color 100ms ease, background-color 0.3s ease;
-    }
-    /*////////// INI STYLE WARNA UNTUK WINDOWS ///////////*/
-    .H3:hover::after {
-      opacity: 1;
-    }
-
-    main {
-      margin-top: 120px;
-    }
-
-    .certificate-category {
-      margin: rem 0;
-      text-align: center;
-    }
-
-    .category-title {
-      font-size: 2rem;
-      color: #00ff88;
-      text-shadow: 2px 2px 10px #00ff88;
-      margin-bottom: 1rem;
-      background-color: #00400071;
-      border-radius: 10px;;
-    }
-
-    .category-gallery {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .certificate {
-      position: relative;
-      transition: transform 0.6s ease, box-shadow 0.6s ease;
-      overflow: hidden;
-      border: 2px solid #00ff88;
-      box-shadow: 0 0 5px #00ff88;
-      transform-style: preserve-3d;
-      border-radius: 10px;
-    }
-    .certificate img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      backface-visibility: hidden;
-    }
-    /*////////// INI STYLE WARNA UNTUK WINDOWS ///////////*/
-    .certificate:hover {
-      transform: perspective(1000px) rotateY(-80deg) rotateX(10deg);
-      box-shadow: 0 8px 24px rgba(0, 128, 255, 0.8), 0 0 10px rgba(0, 128, 255, 0.5);
-      border-color: rgb(0, 238, 255);
-      transition: transform 0.8s ease, box-shadow 0.8s ease, border-color 0.8s ease;
-    }
-    /*////////// INI STYLE WARNA UNTUK ANDROID ///////////*/
-    body.android .certificate:hover {
-      box-shadow: 1px 1px 14px #00ffae, 0 0 5px #00ff1e9a;
-      border-color: #00ffae;
-    }
-    /*////////// INI STYLE WARNA UNTUK IPHONE ////////////*/
-    body.ios .certificate:hover {
-      box-shadow: 1px 1px 14px #ffffff, 0 0 5px #c5c5c59a;
-      border-color: #ffffff;
-    }
-  /*/////////////////////////////////// SERTIFIKAT ///////////////////////////////////////////*/
-
-      #certificate-horizontal {
-        margin: 5px;
-        display: block; 
-      }
-      #certificate-vertical {
-        margin: 5px;
-        display: block; 
-      }
-
-  /*/////////////////////////////////// SERTIFIKAT ///////////////////////////////////////////*/
-
-    .contact-container {
-      filter: brightness(0) saturate(100%) invert(46%) sepia(92%) saturate(1461%) hue-rotate(73deg) brightness(120%) contrast(119%);
-      width: 20px; /* lebar */
-      height: auto; /* tinggi menyesuaikan */
-      display: flex; /* bikin sejajar */
-      align-items: center; /* vertikal rata tengah */
-      gap: 10px; /* jarak antara logo dan tulisan */
-    }
-    #logo {
-      width: 25px; /* sesuaikan ukuran logo */
-      height: auto;
-      padding-left: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #00290063;
-      color: #00ff88;
-      border-radius: 10px;
-      margin: 1px;
-    }
-
-    /* Untuk layar HP kecil */
-    /*////////////  ////////////////*/
-    @media (max-width: 720px) {
-
-      header h1 {
-        font-size: 2rem;
-      }
-      .category-gallery {
-        align-items: center;
-      }
-      .certificate {
-        width: 90%; /* Jadi lebih kecil di HP */
-        height: auto;
-      }
-      .navbar-links {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .navbar-links a {
-      padding: 0px;
-      }
-      .navbar-links a:hover {
-        background: rgba(0, 255, 229, 0);
-      }
-      .about img {
-        display: block;
-        margin: auto;
-        height: 255px; width: auto;
-      }
-      .certificate:hover {
-        transform: none !important;
-        border-color: rgb(0, 238, 255);
-        box-shadow: 0 8px 24px rgba(0, 128, 255, 0.8), 0 0 10px rgba(0, 128, 255, 0.5);
-      }
-      #certificate-horizontal {
-    /*Dengan cara ini kamu bisa mengantikan style tanpa hapus style inline di img*/
-        height: auto !important; 
-        width: 100% !important;
-        aspect-ratio: 5 / 3.5;
-    /*///////////////////////////////////////////////////////////////////////////*/
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        /*//// LANDSACPE ////*/
-      }
-      #certificate-vertical {
-        height: auto; 
-        display: block; 
-        margin: 10px;
-        /*///// POTRAIT /////*/
-      }
-      .about {
-        margin-left: 50px;
-        margin-right: 50px;
-      }
-    }
-
-    /* Untuk tablet */
-    @media (min-width: 721px) {
-      .certificate {
-        width: 20%;
-        height: auto;
-      }
-    }
-  </style>  
 </head>
 <body>
 
@@ -388,7 +35,7 @@
     <h2>
       About Me
     </h2>
-      <img style="border-radius: 100%;" src="FILE/FOTO.png" alt="Foto Profil"/>
+      <img style="border-radius: 10%;" src="FILE/FOTO.jpeg" alt="Foto Profil"/>
       <p style="text-align: justify; padding-left: 40px; margin-left: 100; font-size: 15px; color: #ffffff;">Perkenalkan nama saya Peter Ryan Samloy, saya adalah seorang siswa SMA yang sedang belajar hal-hal yang berkaitan dengan dunia cyber security. Semua ini yang saya lakukan adalah untuk mencapai cita-cita saya sebagai seorang cyber security engineer,
       <br><br>
       DAN🔥
@@ -404,12 +51,12 @@
       <h2 class="category-title">Bug Bounty Awards</h2>
 
       <div class="category-gallery">
-        <div id="certificate-vertical" class="certificate" style="width: 350px; height: 500px; position: relative; background-image: url(FILE/213.\ Peter\ Ryan\ Samloy__signed.png); background-size: cover; background-position: center;">
+        <div id="certificate-vertical" class="certificate" style="width: 450px; height: 600px; position: relative; background-image: url(FILE/213.\ Peter\ Ryan\ Samloy__signed.png); background-size: cover; background-position: center;">
             <div style="margin-top: 40px; text-align: center;">
             </div>
         </div>
         <!-------Jangan Lupa Atur Height sertifikatnya----------->
-        <div id="certificate-vertical" class="certificate" style="width: 350px; height: 500px; position: relative; background-image: url('path_to_your_vertical_certificate_image.jpg'); background-size: cover; background-position: center;">
+        <div id="certificate-vertical" class="certificate" style="width: 450px; height: 600px; position: relative; background-image: url('path_to_your_vertical_certificate_image.jpg'); background-size: cover; background-position: center;">
             <div style="margin-top: 40px; text-align: center;">
               <img src="FILE/TURU V3.png" alt="Sertifikat">
               <h2>certificate-vertical</h2>
@@ -432,9 +79,8 @@
         <div id="certificate-horizontal" class="certificate" style="width: 600px; height: 350px; position: relative; background-image: url(FILE/Peter\ Ryan\ Samloy_page-0001.jpg); background-size: cover; background-position: center;">
         </div>
       
-        <div id="certificate-vertical" class="certificate" style="width: 350px; height: 500px; position: relative; background-image: url(FILE/Sertifikat\ JH\ -\ dark\ web\ uncovered\ \(250\)_page-0001.jpg); background-size: cover; background-position: center;">
-          <div style="margin-top: 40px; text-align: center;">
-          </div>
+        <div id="certificate-vertical" class="certificate" style="width: 450px; height: 600px; position: relative; background-image: url(FILE/Sertifikat\ JH\ -\ dark\ web\ uncovered\ \(250\)_page-0001.jpg); background-size: cover; background-position: center;">
+          <div style="margin-top: 40px; text-align: center;"></div>
         </div>
 
         <div id="certificate-horizontal" class="certificate" style="width: 600px; height: 350px; position: relative; background-image: url(FILE/Peter\ Ryan\ Samloy\ 1_pages-to-jpg-0001.jpg); background-size: cover; background-position: center;">
@@ -464,7 +110,7 @@
         </div>
         <div id="certificate-horizontal" class="certificate" style="width: 600px; height: 400px; position: relative; background-image: url(FILE/Screenshot\ 2025-01-10\ 120436.png); background-size: cover; background-position: center;">
         </div>
-         <div id="certificate-horizontal" class="certificate" style="width: 610px; height: 350px; position: relative; background-image: url(FILE/1.\ Linux\ Hacking\ Id.jpg); background-size: cover; background-position: center;">
+         <div id="certificate-horizontal" class="certificate" style="width: 610px; height: 500px; position: relative; background-image: url(FILE/1.\ Linux\ Hacking\ Id.jpg); background-size: cover; background-position: center;">
         </div>
       </div>
     </section>
@@ -475,15 +121,18 @@
        <div class="category-gallery">
         <!--////////////////////////////////////////////-->
         <!-------Jangan Lupa Atur Height sertifikatnya----------->
-        <div id="certificate-horizontal" class="certificate" style="width: 600px; height: 430px; position: relative; background-image: url('FILE/Certificate-of-Completion-Introduction-to-Information-Security_page-0001.png'); background-size: cover; background-position: center;">
-          <h2>certificate-horizontal</h2>
-          <img style="height: 400px; width: auto;" src="FILE/TURU V3.png" alt="Sertifikat">
+        <div id="certificate-horizontal" class="certificate" style="width: 630px; height: 424px; position: relative; background-image: url(FILE/10-B\ -\ Peter\ Ryan\ Samloy\ -\ PESERTA\ INFORMATIKA.jpg); background-size: cover; background-position: center;">
         </div>
-        <div id="certificate-vertical" class="certificate" style="width: 350px; height: 500px; position: relative; background-image: url(FILE/Sertifikat\ JH\ -\ dark\ web\ uncovered\ \(250\)_page-0001.png); background-size: cover; background-position: center;">
-          <div style="margin-top: 40px; text-align: center;">
-            <h2>certificate-vertical</h2>
-            <img src="FILE/TURU V3.png" alt="Sertifikat">
-          </div>
+        <div id="certificate-horizontal" class="certificate" style="width: 630px; height: 424px; position: relative; background-image: url(FILE/10-B\ -\ Peter\ Ryan\ Samloy\ -\ PESERTA\ BAHASA\ INGGRIS.jpg); background-size: cover; background-position: center;">
+        </div>
+        <div id="certificate-horizontal" class="certificate" style="width: 630px; height: 424px; position: relative; background-image: url(FILE/BRONZE-MALAYSIA-\ Peter\ Riyan\ S.jpg); background-size: cover; background-position: center;">
+        </div>
+
+        <div id="certificate-vertical" class="certificate" style="width: 400px; height: 600px; position: relative; background-image: url('path_to_your_vertical_certificate_image.jpg'); background-size: cover; background-position: center;">
+            <div style="margin-top: 40px; text-align: center;">
+              <img src="FILE/TURU V3.png" alt="Sertifikat">
+              <h2>certificate-vertical</h2>
+            </div>
         </div>
         
       </div>
@@ -501,7 +150,7 @@
   </div>
 
   <footer>
-    &copy; 2025 | Portfolio Peter Ryan Samloy
+    &copy; 2026 | Portfolio Peter Ryan Samloy
   </footer>
   <script>
     const ua = navigator.userAgent.toLowerCase();
